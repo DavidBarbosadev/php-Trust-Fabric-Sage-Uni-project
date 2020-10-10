@@ -1,0 +1,222 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.logo img{
+    height: 200px;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#E1E0DA;
+    z-index: 3;
+    border-bottom: 5px solid #FFB341;
+    
+}
+
+html{
+    background:#E9ECE7;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+}
+header ul li{
+    list-style: none;
+    position: relative;
+    
+    
+}   
+header ul li img{
+    left: 10px;
+    padding: 0;
+    height: 100px;
+    width: 100px;
+}
+header ul li a{
+    
+    position: relative;
+    padding: 5px 10px;
+    color: #FFB341;
+    display:inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background: #E1E0DA;
+    border-bottom: 3px solid transparent;
+    font-size: 22px;
+    
+}
+
+header ul li a:hover{
+    background: #FFB341;
+    color: #5E605D;
+    border-bottom: 3px solid black;
+    
+}
+
+.toggle{
+    display: none;
+}
+.search{ position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+h1{
+    font-size: 40px;
+}
+input,select{
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    background-color: #F8BC62;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    color: white;
+
+}
+input[type="submit"]{
+    background-color: orange;
+    cursor: pointer;
+}
+
+.boxtitles .content{
+    width: 100%;
+    margin: 0;
+}
+
+section .boxtitles .content h1{
+    font-size: 20px;
+    width: 20%;
+    float: left; 
+    margin-right: 10%;
+    margin-top: 150px;
+    margin-left: 0;
+    margin-bottom: 0;
+    background: #5E605D;
+    color: #F8BC62;
+    padding: 20px;
+    border-radius: 15px; 
+    text-align: center;
+}
+ p{   
+ width: 70%;
+ margin-right: 10%;
+ float: right;
+ background: #E9ECE7;
+ text-align: center;
+ margin: 10px;
+ bottom: 10px;
+ border: 2px solid grey;
+ padding: 10px;
+
+ border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1085px){
+
+    .box{
+   
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0, 20px 0 30px black;
+        border-radius: 12px;
+    }
+    header ul{
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 50px 100px;
+        text-align: center;
+        overflow: auto;
+        transition: 0.5s ease-in;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    header.active ul{
+        background-color: #FFB341;
+        opacity: 1;
+        top: 155px;
+        transform: translateY(0);
+    }
+        
+    header ul li a{
+        margin: 5px 0;
+        font-size: 60px; 
+        background-color: #FFB341;
+        color: aliceblue;
+    }
+    .toggle{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-color: #E1E0DA;
+       
+    }
+    .toggle:before{
+        content: '';
+        position: absolute;
+        top:4px;
+        width: 100%;
+        height: 2px;
+        background: black;
+        z-index: 1;
+        box-shadow: 0 10px 0 #E1E0DA;
+        transition: 0.5s ease-out;
+    }
+    .toggle:after{
+        content: '';
+        position: absolute;
+        bottom:4px;
+        width: 100%;
+        height: 2px;
+        background: black;
+        z-index: 1;
+      
+        transition: 0.5s ease-in-out;
+    }
+    header.active .toggle:before{
+        top: 14px;
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 black;
+    }
+    header.active .toggle::after{
+        bottom: 14px;
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 black;
+    }
+
+
+}
